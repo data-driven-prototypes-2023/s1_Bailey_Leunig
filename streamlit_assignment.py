@@ -109,6 +109,7 @@ if section == "Overview and Exploratory Data Analysis":
     # Cofeee Button
     button(username="fake-username", floating=False, width=220, bg_color='#ADD8E6')
 
+    # Set up tabs
     tab1, tab2, tab3 = st.tabs(["Basic Exploration", "Advanced Filtering", "Statistics"])
     with tab1:
         st.header("Basic Exploration of Raw data")
@@ -129,6 +130,7 @@ if section == "Overview and Exploratory Data Analysis":
     with tab2:
 
         st.header("Advanced Filtering and Exploration")
+        df = pd.read_csv(file) 
         filtered_df = dataframe_explorer(df)
         st.dataframe(filtered_df, use_container_width=True)
         st.write(f'Number of rows: {filtered_df.shape[0]}')
